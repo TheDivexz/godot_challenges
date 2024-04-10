@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwrcq25mm2tvj"]
+
+[ext_resource type="Script" path="res://drop.gd" id="1_lhapc"]
+[ext_resource type="Shader" path="res://purple.gdshader" id="1_rjynr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b3y5p"]
+shader = ExtResource("1_rjynr")
+
+[sub_resource type="BoxMesh" id="BoxMesh_d6vtl"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lhapc")
+
+[node name="raindrop" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_b3y5p")
+mesh = SubResource("BoxMesh_d6vtl")
