@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dps6wbm623qgq"]
+
+[ext_resource type="Script" path="res://Cell.gd" id="1_hhjjt"]
+[ext_resource type="Shader" path="res://Cell.gdshader" id="2_bx4ok"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_57u6v"]
+shader = ExtResource("2_bx4ok")
+shader_parameter/set_color = null
+
+[sub_resource type="SphereMesh" id="SphereMesh_1uakp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7clrf"]
+radius = 3.00666
+
+[node name="Cell" type="Node2D"]
+script = ExtResource("1_hhjjt")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_57u6v")
+position = Vector2(15, 15)
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_1uakp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(15, 15)
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_7clrf")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
