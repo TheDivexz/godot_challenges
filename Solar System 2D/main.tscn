@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://tuoqfyn3o7oe"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_2km4o"]
+[ext_resource type="PackedScene" uid="uid://c6f3s44toqcu1" path="res://celestial_object.tscn" id="1_mbxap"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2km4o")
+initial_planets = 100
+
+[node name="Planets" type="Node2D" parent="."]
+
+[node name="Sun" parent="Planets" instance=ExtResource("1_mbxap")]
+mass = 2000.0
+
+[node name="Camera" type="Camera2D" parent="."]

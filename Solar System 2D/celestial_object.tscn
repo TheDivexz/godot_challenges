@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6f3s44toqcu1"]
+
+[ext_resource type="Script" path="res://celestial_object.gd" id="1_fak38"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fps25"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bd01"]
+radius = 15.0
+
+[node name="CelestialObject" type="Node2D"]
+script = ExtResource("1_fak38")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_fps25")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_2bd01")

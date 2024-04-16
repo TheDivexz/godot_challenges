@@ -4,6 +4,7 @@
 [ext_resource type="Shader" path="res://Cell.gdshader" id="2_bx4ok"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_57u6v"]
+resource_local_to_scene = true
 shader = ExtResource("2_bx4ok")
 shader_parameter/set_color = null
 
