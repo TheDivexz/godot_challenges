@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnf4ktx6uomrr"]
+
+[ext_resource type="Script" path="res://planet.gd" id="1_0ukf2"]
+[ext_resource type="Shader" path="res://planet.gdshader" id="2_d3kh2"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_edmt4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0b7j"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_d3kh2")
+shader_parameter/setColor = Vector3(0, 0, 0)
+
+[node name="Planet" type="Node3D"]
+script = ExtResource("1_0ukf2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_edmt4")
+surface_material_override/0 = SubResource("ShaderMaterial_k0b7j")

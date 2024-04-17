@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://20rk8wrluhmg"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_hr3uv"]
+[ext_resource type="PackedScene" uid="uid://dnf4ktx6uomrr" path="res://planet.tscn" id="1_r21rb"]
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_hr3uv")
+initial_planets = 100
+
+[node name="Sun" parent="." instance=ExtResource("1_r21rb")]
+isSun = true
+mass = 200.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="Planets" type="Node3D" parent="."]
+
+[node name="Sunlight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00457335)
+light_energy = 16.0
+omni_range = 26.7109
