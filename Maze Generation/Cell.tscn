@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dguspahncjrmv"]
+
+[ext_resource type="Script" path="res://Cell.gd" id="1_j74t3"]
+
+[node name="Cell" type="Node2D"]
+script = ExtResource("1_j74t3")
