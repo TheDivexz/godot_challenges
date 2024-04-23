@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjyav46fe2eia"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_asvrf"]
+[ext_resource type="Script" path="res://Path3D.gd" id="1_vwakn"]
+[ext_resource type="Shader" path="res://main.gdshader" id="2_w8ssm"]
+
+[sub_resource type="Curve3D" id="Curve3D_s1xey"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5o5vv"]
+render_priority = 0
+shader = ExtResource("2_w8ssm")
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_asvrf")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.1643)
+
+[node name="pathing" type="Node3D" parent="."]
+
+[node name="Path3D" type="Path3D" parent="pathing"]
+curve = SubResource("Curve3D_s1xey")
+script = ExtResource("1_vwakn")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="pathing/Path3D"]
+polygon = PackedVector2Array(0, 0, 0, 0.05, 0.05, 0.05, 0.05, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("ShaderMaterial_5o5vv")
