@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfhsf1prv116u"]
+
+[ext_resource type="Shader" path="res://cell.gdshader" id="1_s1x1b"]
+[ext_resource type="Script" path="res://cell.gd" id="1_v18v6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_enipf"]
+resource_local_to_scene = true
+shader = ExtResource("1_s1x1b")
+shader_parameter/a_value = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_wwha7"]
+
+[node name="Cell" type="Node2D"]
+script = ExtResource("1_v18v6")
+
+[node name="square" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_enipf")
+position = Vector2(0.5, 0.5)
+mesh = SubResource("BoxMesh_wwha7")
