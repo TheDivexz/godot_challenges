@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4vv5y2f276ys"]
+
+[ext_resource type="Shader" path="res://dot.gdshader" id="1_clfgs"]
+[ext_resource type="Script" path="res://dot.gd" id="2_sdbya"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2t0ef"]
+resource_local_to_scene = true
+shader = ExtResource("1_clfgs")
+shader_parameter/grayscale = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_hfdy3"]
+
+[node name="dot" type="MeshInstance2D"]
+material = SubResource("ShaderMaterial_2t0ef")
+position = Vector2(0, 5.96046e-07)
+scale = Vector2(2.002, 2)
+mesh = SubResource("SphereMesh_hfdy3")
+script = ExtResource("2_sdbya")

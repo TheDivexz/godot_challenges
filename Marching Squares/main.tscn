@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkjyroqjatffr"]
+
+[ext_resource type="Script" path="res://points.gd" id="1_jxbcs"]
+[ext_resource type="Script" path="res://Lines.gd" id="2_7ih1e"]
+
+[node name="main" type="Node2D"]
+
+[node name="Points" type="Node" parent="."]
+script = ExtResource("1_jxbcs")
+density = 25
+
+[node name="Lines" type="Node" parent="."]
+script = ExtResource("2_7ih1e")
